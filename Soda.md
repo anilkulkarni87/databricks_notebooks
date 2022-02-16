@@ -14,6 +14,11 @@ The documentation is quite clean and easy to read and can be found [here](https:
   
   ### Installation
   Installation was tricky currently when I tried it in Databricks Community Edition. You can refer to the Step 1 in the notebook for the workaround. Otherwise its pretty starightforward.
+
+### Notebooks reference
+1. Setup Cluster by installing required libraries [Setup cluster](./soda/SODA_CLUSTER_SETUP.html)
+2. Define the BaseDataContext for GE [Define variables](./soda/SODA_PROPERTIES.html)
+3. Define expectations and run tests [Data Quality](./soda/SODA_POC.html)
   
 ## Scan Results
 Scan Results is a python Object and comprises of two child Objects:
