@@ -19,9 +19,9 @@ Great expectations fills the void that our Data pipeline exists. As we transitio
   Installation is a cakewalk. I have tried this in the Databricks community edition.
 
 ### Notebooks reference
-1. Setup Cluster by installing required libraries [Setup cluster](./greatexpectations/GE_CLUSTER_SETUP.ipynb)
-2. Define the BaseDataContext for GE [Setup Data Context](./greatexpectations/GE_PROPERTIES.ipynb)
-3. Define expectations and run tests [Data Quality](./greatexpectations/GE_POC.ipynb)
+1. Setup Cluster by installing required libraries [Setup cluster](./greatexpectations/GE_CLUSTER_SETUP.html)
+2. Define the BaseDataContext for GE [Setup Data Context](./greatexpectations/GE_PROPERTIES.html)
+3. Define expectations and run tests [Data Quality](./greatexpectations/GE_POC.html)
 
 
 ### Data Docs
