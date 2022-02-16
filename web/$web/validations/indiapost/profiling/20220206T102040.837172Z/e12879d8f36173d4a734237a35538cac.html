@@ -1,0 +1,5152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data documentation compiled by Great Expectations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title></title>
+
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/filter-control/bootstrap-table-filter-control.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <style>
+  
+
+body {
+  position: relative;
+}
+
+.container {
+  padding-top: 50px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 90px;
+  z-index: 1;
+}
+
+.ge-section {
+  clear: both;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.popover {
+  max-width: 100%;
+}
+
+.cooltip {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cooltip .top {
+  min-width: 200px;
+  top: -6px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  padding: 10px 20px;
+  color: #FFFFFF;
+  background-color: #222222;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999 !important;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.cooltip:hover .top {
+  display: block;
+  z-index: 99999999 !important;
+}
+
+.cooltip .top i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.cooltip .top i::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #222222;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+.show-scrollbars {
+  overflow: auto;
+}
+
+td .show-scrollbars {
+  max-height: 80vh;
+}
+
+/*.show-scrollbars ul {*/
+/*  padding-bottom: 20px*/
+/*}*/
+
+.show-scrollbars::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.show-scrollbars::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.show-scrollbars::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.show-scrollbars::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#ge-cta-footer {
+  opacity: 0.9;
+  border-left-width: 4px
+}
+
+.carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
+}</style>
+    <style></style>
+
+    
+  
+
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script src="https://kit.fontawesome.com/8217dffd95.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    
+  
+
+
+  
+
+<link rel="shortcut icon" href="../../../static/images/favicon.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+    
+      
+  
+
+
+
+
+  
+
+
+  
+<style type="text/css">
+div.card-footer .container {
+    padding-top: 0;
+}
+div.walkthrough-card {
+    height: 100%;
+ }
+div.modal-body {
+    height: 700px
+}
+div.image-sizer {
+    max-height: 400px;
+    width: 100%;
+    padding: 0 40px;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+.code-snippet {
+    margin: 0 40px 1em 40px;
+    padding: 1em 40px;
+}
+code.inline-code {
+    padding: 2px 5px;
+}
+img.dev-loop {
+    max-height: 250px;
+}
+.json-key {
+    color: #333333;
+    font-weight: bold;
+}
+.json-str {
+    color: darkgreen;
+}
+.json-bool {
+    color: darkorange;
+}
+.json-number {
+    color: darkblue;
+}
+</style>
+
+<div class="modal fade ge-walkthrough-modal" tabindex="-1" role="dialog" aria-labelledby="ge-walkthrough-modal-title"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="ge-walkthrough-modal-title">Great Expectations Walkthrough</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card walkthrough-card bg-dark text-white walkthrough-1">
+        <div class="card-header"><h4>How to work with Great Expectations</h4></div>
+            <div class="card-body">
+              <div class="image-sizer text-center">
+                  <img src="../../../../static/images/iterative-dev-loop.png" class="img-fluid rounded-sm mx-auto dev-loop">
+              </div>
+                  <p>
+                      Welcome! Now that you have initialized your project, the best way to work with Great Expectations is in this iterative dev loop:
+                  </p>
+                <ol>
+                    <li>Let Great Expectations create a simple first draft suite, by running <code class="inline-code bg-light">great_expectations suite new</code>.</li>
+                    <li>View the suite here in Data Docs.</li>
+                    <li>Edit the suite in a Jupyter notebook by running <code class="inline-code bg-light">great_expectations suite edit</code></li>
+                    <li>Repeat Steps 2-3 until you are happy with your suite.</li>
+                    <li>Commit this suite to your source control repository.</li>
+                </ol>
+            </div>
+            <div class="card-footer walkthrough-links">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    &nbsp;
+                  </div>
+                  <div class="col-6 text-center text-secondary">
+                    1 of 7
+                    <div class="progress" style="height: 2px">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="16"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(2)">Next</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-2">
+                <div class="card-header"><h4>What are Expectations?</h4></div>
+                <div class="card-body">
+                    <ul class="code-snippet bg-light text-muted rounded-sm">
+                        <li>expect_column_to_exist</li>
+                        <li>expect_table_row_count_to_be_between</li>
+                        <li>expect_column_values_to_be_unique</li>
+                        <li>expect_column_values_to_not_be_null</li>
+                        <li>expect_column_values_to_be_between</li>
+                        <li>expect_column_values_to_match_regex</li>
+                        <li>expect_column_mean_to_be_between</li>
+                        <li>expect_column_kl_divergence_to_be_less_than</li>
+                        <li>... <a href="https://greatexpectations.io/expectations">and many more</a></li>
+                    </ul>
+                  <p>An expectation is a falsifiable, verifiable statement about data.</p>
+                  <p>Expectations provide a language to talk about data characteristics and data quality - humans to humans, humans to machines and machines to machines.</p>
+                  <p>Expectations are both data tests and docs!</p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(1)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        2 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="32"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(3)">Next</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-3">
+                <div class="card-header"><h4>Expectations can be presented in a machine-friendly JSON</h4></div>
+                <div class="card-body">
+                    <p class="code-snippet bg-light text-muted rounded-sm">
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"expectation_type"</span>: <span class="json-str">"expect_column_values_to_not_be_null",</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"kwargs"</span>: {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"column"</span>: <span class="json-str">"user_id"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+}<br />
+                    </p>
+                  <p>A machine can test if a dataset conforms to the expectation.</p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(2)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        3 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(4)">Next</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-4">
+                <div class="card-header"><h4>Validation produces a validation result object</h4></div>
+                <div class="card-body">
+                     <p class="code-snippet bg-light text-muted rounded-sm">
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"success"</span>: <span class="json-bool">false</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"result":</span> {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"element_count"</span>: <span class="json-number">253405,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"unexpected_count"</span>: <span class="json-number">7602,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"unexpected_percent"</span>: <span class="json-number">2.999</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"expectation_config"</span>: {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"expectation_type"</span>: <span class="json-str">"expect_column_values_to_not_be_null"</span>,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"kwargs"</span>: {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"column"</span>: <span class="json-str">"user_id"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+}<br />
+                    </p>
+                  <p>Here's an example Validation Result (not from your data) in JSON format. This object has rich context about the test failure.</p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(3)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        4 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="68"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(5)">Next</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-5">
+                <div class="card-header"><h4>Validation results save you time.</h4></div>
+                <div class="card-body">
+                  <div class="image-sizer text-center">
+                      <img src="../../../../static/images/validation_failed_unexpected_values.gif" class="img-fluid rounded-sm mx-auto">
+                  </div>
+                  <p>This is an example of what a single failed Expectation looks like in Data Docs. Note the failure includes unexpected values from your data. This helps you debug pipelines faster.</p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(4)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        5 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="84"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(6)">Next</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-6">
+                <div class="card-header"><h4>Great Expectations provides a large library of expectations.</h4></div>
+                <div class="card-body">
+                  <div class="image-sizer text-center">
+                      <img src="../../../../static/images/glossary_scroller.gif" class="img-fluid rounded-sm mx-auto">
+                  </div>
+                  <p><a href="https://greatexpectations.io/expectations">Nearly 50 built in expectations</a> allow you to express how you understand your data, and you can add custom
+                  expectations if you need a new one.
+                  </p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(5)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        6 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="84"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-primary float-right" onclick="go_to_slide(7)">Next</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="card walkthrough-card bg-dark text-white walkthrough-7">
+                <div class="card-header"><h4>Now explore and edit the sample suite!</h4></div>
+                <div class="card-body">
+                  <p>This sample suite shows you a few examples of expectations.</p>
+                  <p>Note this is <strong>not a production suite</strong> and was generated using only a small sample of your data.</p>
+                  <p>When you are ready, press the <strong>How to Edit</strong> button to kick off the iterative dev loop.</p>
+                </div>
+                <div class="card-footer walkthrough-links">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="#" class="next-link btn btn-secondary float-left" onclick="go_to_slide(6)">Back</a>
+                      </div>
+                      <div class="col-6 text-center text-secondary">
+                        7 of 7
+                        <div class="progress" style="height: 2px">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <button type="button" class="btn btn-primary float-right" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">Done</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/JavaScript">
+  $(".ge-walkthrough-modal").on('hide.bs.modal', function (e) {
+    try {
+      localStorage.setItem('ge-walkthrough-modal-dismissed', 'true');
+    }
+    catch (e) {
+      console.log(e);
+    }
+    go_to_slide(1);
+  })
+</script>
+
+
+<script type="text/JavaScript">
+  function go_to_slide(slide_number) {
+    hide_cards();
+    $('.walkthrough-' + slide_number).show();
+  }
+  function hide_cards() {
+    $('.walkthrough-card').hide();
+  }
+  hide_cards();
+  go_to_slide(1);
+</script>
+    
+
+    
+
+    
+  
+
+
+  
+
+<nav class="navbar bg-light navbar-expand-md sticky-top border-bottom" style="height: 70px">
+  <div class="mr-auto">
+    <nav class="d-flex align-items-center">
+      <div class="float-left navbar-brand m-0 h-100">
+        <a href="../../../../index.html">
+          <img
+            class="NO-CACHE"
+            src="https://great-expectations-web-assets.s3.us-east-2.amazonaws.com/logo-long.png?d=20220216T080836.076168Z&dataContextId=00000000-0000-0000-0000-00000000e003"
+            alt="Great Expectations"
+            style="width: auto; height: 50px"
+          />
+        </a>
+      </div>
+      
+        <ol class="ge-breadcrumbs breadcrumb d-md-inline-flex bg-light ml-2 mr-0 mt-0 mb-0 pt-0 pb-0 d-none">
+            <li class="ge-breadcrumbs-item breadcrumb-item"><a href="../../../../index.html">Home</a></li>
+            <li class="ge-breadcrumbs-item breadcrumb-item active" aria-current="page">Profiling Results / indiapost / profiling / 2022-02-06T10:20:40.837172+00:00</li>
+        </ol>
+      
+    </nav>
+  </div>
+</nav>
+    
+
+    <div class="container-fluid pt-4 pb-4 pl-5 pr-5">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-12 d-sm-block px-0">
+  <div class="mb-4">
+  
+    <div class="col-12 p-0">
+      <h4>Data Asset Profile</h4>
+      <p class="lead">Overview of data values, statistics, and distributions.</p>
+    </div>
+  
+</div>
+  <div class="sticky">
+    
+      <script>
+    function showAllValidations() {
+    $(".hide-succeeded-validation-target-child").parent().fadeIn();
+    $(".hide-succeeded-validation-target").fadeIn();
+    $(".hide-succeeded-validations-column-section-target-child").parent().parent().each((idx, el) => {
+      $(el).fadeIn();
+      const elId = el.id;
+      $(`a[href$=${elId}]`).fadeIn();
+    })
+  }
+
+    function hideSucceededValidations() {
+    $(".hide-succeeded-validation-target-child").parent().fadeOut();
+    $(".hide-succeeded-validation-target").fadeOut();
+    $(".hide-succeeded-validations-column-section-target-child").parent().parent().each((idx, el) => {
+      $(el).fadeOut();
+      const elId = el.id;
+      $(`a[href$=${elId}]`).fadeOut();
+    })
+  }
+</script>
+
+<div class="card bg-light mb-3">
+  <div class="card-header p-2">
+    <strong>Actions</strong>
+  </div>
+  <div class="card-body p-3">
+    
+    
+      
+
+      <div class="mb-2">
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target=".ge-walkthrough-modal">
+            Show Walkthrough
+          </button>
+        </div>
+      </div>
+    
+  </div>
+</div>
+    
+    
+      <div class="card bg-light d-md-block d-none" style="max-height: 75vh">
+  <div class="card-header p-2">
+    <strong>Table of Contents</strong>
+  </div>
+  <div class="card-body p-0" style="overflow: auto; height: 100%">
+    <nav id="navigation" class="rounded navbar navbar-light bg-light ge-navigation-sidebar-container p-1" style="max-height: 65vh;">
+      <ul class="nav nav-pills ge-navigation-sidebar-content col-12 p-0" style="max-height: 65vh">
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link" href="#section-1"
+               style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                <strong>Overview</strong>
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-2"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                officename
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-3"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                pincode
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-4"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                officeType
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-5"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Deliverystatus
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-6"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                divisionname
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-7"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                regionname
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-8"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                circlename
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-9"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Taluk
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-10"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Districtname
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-11"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                statename
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-12"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Telephone
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-13"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Related Suboffice
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-14"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                Related Headoffice
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-15"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                longitude
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-16"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                latitude
+              </a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+    
+  </div>
+</div>
+        <div class="col-md-10 col-lg-10 col-xs-12 pl-md-4 pr-md-3">
+        
+          <div id="section-1" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-1-content-block-1" class="col-12 p-0" >
+
+    <div id="section-1-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0" >
+                    Overview
+                </h5>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-1-content-block-2" class="col-6 mt-1 p-1" >
+
+    <div id="section-1-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Dataset info
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-1-content-block-2-body"
+  class="table table-sm" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-1-content-block-2-cell-1-1" ><div class="show-scrollbars">Number of variables</div></td><td id="section-1-content-block-2-cell-1-2" ><div class="show-scrollbars">15</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Number of observations
+                    <span class=top>
+                        expect_table_row_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-1-content-block-2-cell-2-2" ><div class="show-scrollbars">154797</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-3-1" ><div class="show-scrollbars">Missing cells</div></td><td id="section-1-content-block-2-cell-3-2" ><div class="show-scrollbars">0.00%</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-1-content-block-3" class="col-6 table-responsive mt-1 p-1" >
+
+    <div id="section-1-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Variable types
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-1-content-block-3-body"
+  class="table table-sm" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-1-content-block-3-cell-1-1" ><div class="show-scrollbars">int</div></td><td id="section-1-content-block-3-cell-1-2" ><div class="show-scrollbars">1</div></td></tr><tr>
+          <td id="section-1-content-block-3-cell-2-1" ><div class="show-scrollbars">float</div></td><td id="section-1-content-block-3-cell-2-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-1-content-block-3-cell-3-1" ><div class="show-scrollbars">string</div></td><td id="section-1-content-block-3-cell-3-2" ><div class="show-scrollbars">14</div></td></tr><tr>
+          <td id="section-1-content-block-3-cell-4-1" ><div class="show-scrollbars">datetime</div></td><td id="section-1-content-block-3-cell-4-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-1-content-block-3-cell-5-1" ><div class="show-scrollbars">bool</div></td><td id="section-1-content-block-3-cell-5-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-1-content-block-3-cell-6-1" ><div class="show-scrollbars">unknown</div></td><td id="section-1-content-block-3-cell-6-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-1-content-block-4" class="col-12 p-1" >
+
+    
+
+
+  
+  
+
+
+
+
+
+
+<div id="section-1-content-block-4-parent" >
+  
+    <p class="m-0">
+      <a data-toggle="collapse" href="#section-1-content-block-4-collapse-body-374b4e99-3ec5-49e1-8bd8-fed6f2f180f7" aria-expanded="false" aria-controls="section-1-content-block-4-collapse-body" >
+        Show Expectation Types...
+      </a>
+    </p>
+  
+
+  <div id=section-1-content-block-4-collapse-body-374b4e99-3ec5-49e1-8bd8-fed6f2f180f7 class="collapse m-2" >
+    
+    
+    
+      
+      
+      
+
+<ul id="section-1-content-block-4-collapse-item-1-body" class="list-group" >
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_values_to_be_in_type_list <span class="badge badge-secondary badge-pill" >15</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_unique_value_count_to_be_between <span class="badge badge-secondary badge-pill" >15</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_proportion_of_unique_values_to_be_between <span class="badge badge-secondary badge-pill" >15</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_values_to_not_be_null <span class="badge badge-secondary badge-pill" >15</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_values_to_be_in_set <span class="badge badge-secondary badge-pill" >15</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_values_to_not_match_regex <span class="badge badge-secondary badge-pill" >14</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_distinct_values_to_be_in_set <span class="badge badge-secondary badge-pill" >10</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_table_row_count_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_table_columns_to_match_ordered_list <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_min_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_max_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_mean_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_median_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_stdev_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_quantile_values_to_be_between <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <span class="list-group-item d-flex justify-content-between align-items-center" >
+                    expect_column_kl_divergence_to_be_less_than <span class="badge badge-secondary badge-pill" >1</span>
+                </span>
+            </li>
+    
+</ul>
+    
+  </div>
+</div>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-2" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-2-content-block-1" class="col-12 p-0" >
+
+    <div id="section-2-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    officename
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-2-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-2-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-2-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-2-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-2-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-1-2" ><div class="show-scrollbars">130960</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-2-2" ><div class="show-scrollbars">84.6%</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-2-content-block-2-cell-5-2" ><div class="show-scrollbars">25</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-2-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-2-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-2-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Achalapur B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Ada B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adegaon B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad Collectorate S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad H.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Agm Colony S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Ainam B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Aknepalli B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Akoli B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Alegaon B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Aloor B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Ambaripet B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Andavelli B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Andugulpet B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Andukur B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Angarajpally B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Ankhoda B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Ankoli B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Annaram B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Arepally B.O</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-3" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-3-content-block-1" class="col-12 p-0" >
+
+    <div id="section-3-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    pincode
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-3-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: int
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-3-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-3-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-3-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-3-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-1-2" ><div class="show-scrollbars">19100</div></td></tr><tr>
+          <td id="section-3-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-2-2" ><div class="show-scrollbars">12.3%</div></td></tr><tr>
+          <td id="section-3-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-3-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-3-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-3-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Quantiles
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-3-content-block-3-body"
+  class="table table-sm table-unbordered" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-3-content-block-3-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    0.05
+                    <span class=top>
+                        expect_column_quantile_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-3-cell-1-2" ><div class="show-scrollbars">173101.0</div></td></tr><tr>
+          <td id="section-3-content-block-3-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Q1
+                    <span class=top>
+                        expect_column_quantile_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-3-cell-2-2" ><div class="show-scrollbars">331403.0</div></td></tr><tr>
+          <td id="section-3-content-block-3-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Median
+                    <span class=top>
+                        expect_column_quantile_values_to_be_between 
+ expect_column_median_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-3-cell-3-2" ><div class="show-scrollbars">504205.0</div></td></tr><tr>
+          <td id="section-3-content-block-3-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Q3
+                    <span class=top>
+                        expect_column_quantile_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-3-cell-4-2" ><div class="show-scrollbars">682313.0</div></td></tr><tr>
+          <td id="section-3-content-block-3-cell-5-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    0.95
+                    <span class=top>
+                        expect_column_quantile_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-3-cell-5-2" ><div class="show-scrollbars">824203.0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-3-content-block-4" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-3-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Statistics
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-3-content-block-4-body"
+  class="table table-sm table-unbordered" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-3-content-block-4-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Mean
+                    <span class=top>
+                        expect_column_mean_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-4-cell-1-2" ><div class="show-scrollbars">501509.54</div></td></tr><tr>
+          <td id="section-3-content-block-4-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Minimum
+                    <span class=top>
+                        expect_column_min_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-4-cell-2-2" ><div class="show-scrollbars">110001.00</div></td></tr><tr>
+          <td id="section-3-content-block-4-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Maximum
+                    <span class=top>
+                        expect_column_max_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-3-content-block-4-cell-3-2" ><div class="show-scrollbars">855117.00</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-3-content-block-5" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-3-content-block-5-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-3-content-block-5-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504201</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504001</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504251</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504273</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504002</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504109</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504110</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504202</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504204</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504231</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504293</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504296</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504299</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504307</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >504309</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-3-content-block-6" class="col-6 mt-2 pl-1 pr-1" >
+
+    <div id="section-3-content-block-6-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Histogram
+                    <span class=top>
+                        expect_column_kl_divergence_to_be_less_than
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-3-content-block-6-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-459029a0f0b719ffd0d945c0f10ea0a7"
+  },
+  "datasets": {
+    "data-459029a0f0b719ffd0d945c0f10ea0a7": [
+      {
+        "bin_max": 122847.8,
+        "bin_min": 110001.0,
+        "fraction": 0.005439381900166024
+      },
+      {
+        "bin_max": 135694.7,
+        "bin_min": 122847.8,
+        "fraction": 0.013953758793775074
+      },
+      {
+        "bin_max": 148541.5,
+        "bin_min": 135694.7,
+        "fraction": 0.021647706350898275
+      },
+      {
+        "bin_max": 161388.3,
+        "bin_min": 148541.5,
+        "fraction": 0.004799834622118
+      },
+      {
+        "bin_max": 174235.1,
+        "bin_min": 161388.3,
+        "fraction": 0.006376092559933332
+      },
+      {
+        "bin_max": 187082.0,
+        "bin_min": 174235.1,
+        "fraction": 0.01731299702190611
+      },
+      {
+        "bin_max": 199928.8,
+        "bin_min": 187082.0,
+        "fraction": 0.005155138665478013
+      },
+      {
+        "bin_max": 212775.6,
+        "bin_min": 199928.8,
+        "fraction": 0.026764084575282468
+      },
+      {
+        "bin_max": 225622.4,
+        "bin_min": 212775.6,
+        "fraction": 0.014431804233932182
+      },
+      {
+        "bin_max": 238469.3,
+        "bin_min": 225622.4,
+        "fraction": 0.015555857025652951
+      },
+      {
+        "bin_max": 251316.1,
+        "bin_min": 238469.3,
+        "fraction": 0.029968281039038223
+      },
+      {
+        "bin_max": 264162.9,
+        "bin_min": 251316.1,
+        "fraction": 0.013604914823930697
+      },
+      {
+        "bin_max": 277009.8,
+        "bin_min": 264162.9,
+        "fraction": 0.021285942234022623
+      },
+      {
+        "bin_max": 289856.6,
+        "bin_min": 277009.8,
+        "fraction": 0.010122935199002564
+      },
+      {
+        "bin_max": 302703.4,
+        "bin_min": 289856.6,
+        "fraction": 0.003669321756881593
+      },
+      {
+        "bin_max": 315550.2,
+        "bin_min": 302703.4,
+        "fraction": 0.023740770169964533
+      },
+      {
+        "bin_max": 328397.1,
+        "bin_min": 315550.2,
+        "fraction": 0.014515785189635458
+      },
+      {
+        "bin_max": 341243.9,
+        "bin_min": 328397.1,
+        "fraction": 0.014250922175494358
+      },
+      {
+        "bin_max": 354090.7,
+        "bin_min": 341243.9,
+        "fraction": 0.010581600418612764
+      },
+      {
+        "bin_max": 366937.6,
+        "bin_min": 354090.7,
+        "fraction": 0.015982221877684968
+      },
+      {
+        "bin_max": 379784.4,
+        "bin_min": 366937.6,
+        "fraction": 0.0032041964637557576
+      },
+      {
+        "bin_max": 392631.2,
+        "bin_min": 379784.4,
+        "fraction": 0.028417863395285438
+      },
+      {
+        "bin_max": 405478.0,
+        "bin_min": 392631.2,
+        "fraction": 0.017416358198156293
+      },
+      {
+        "bin_max": 418324.9,
+        "bin_min": 405478.0,
+        "fraction": 0.034122108309592565
+      },
+      {
+        "bin_max": 431171.7,
+        "bin_min": 418324.9,
+        "fraction": 0.016712210184951906
+      },
+      {
+        "bin_max": 444018.5,
+        "bin_min": 431171.7,
+        "fraction": 0.017151495184015195
+      },
+      {
+        "bin_max": 456865.3,
+        "bin_min": 444018.5,
+        "fraction": 0.016427966950263894
+      },
+      {
+        "bin_max": 469712.2,
+        "bin_min": 456865.3,
+        "fraction": 0.014031279675962712
+      },
+      {
+        "bin_max": 482559.0,
+        "bin_min": 469712.2,
+        "fraction": 0.019890566354645117
+      },
+      {
+        "bin_max": 495405.8,
+        "bin_min": 482559.0,
+        "fraction": 0.024599959947544204
+      },
+      {
+        "bin_max": 508252.7,
+        "bin_min": 495405.8,
+        "fraction": 0.03816611433038108
+      },
+      {
+        "bin_max": 521099.5,
+        "bin_min": 508252.7,
+        "fraction": 0.029567756481068755
+      },
+      {
+        "bin_max": 533946.3,
+        "bin_min": 521099.5,
+        "fraction": 0.03473581529357804
+      },
+      {
+        "bin_max": 546793.1,
+        "bin_min": 533946.3,
+        "fraction": 0.009308965936032351
+      },
+      {
+        "bin_max": 559640.0,
+        "bin_min": 546793.1,
+        "fraction": 0.0
+      },
+      {
+        "bin_max": 572486.8,
+        "bin_min": 559640.0,
+        "fraction": 0.01767476113878176
+      },
+      {
+        "bin_max": 585333.6,
+        "bin_min": 572486.8,
+        "fraction": 0.034044587427404925
+      },
+      {
+        "bin_max": 598180.4,
+        "bin_min": 585333.6,
+        "fraction": 0.01083354328572259
+      },
+      {
+        "bin_max": 611027.3,
+        "bin_min": 598180.4,
+        "fraction": 0.017816882756125765
+      },
+      {
+        "bin_max": 623874.1,
+        "bin_min": 611027.3,
+        "fraction": 0.015355594746668217
+      },
+      {
+        "bin_max": 636720.9,
+        "bin_min": 623874.1,
+        "fraction": 0.03039464589107024
+      },
+      {
+        "bin_max": 649567.8,
+        "bin_min": 636720.9,
+        "fraction": 0.01369535585314961
+      },
+      {
+        "bin_max": 662414.6,
+        "bin_min": 649567.8,
+        "fraction": 0.0
+      },
+      {
+        "bin_max": 675261.4,
+        "bin_min": 662414.6,
+        "fraction": 0.008126772482670852
+      },
+      {
+        "bin_max": 688108.2,
+        "bin_min": 675261.4,
+        "fraction": 0.015898240921981693
+      },
+      {
+        "bin_max": 700955.1,
+        "bin_min": 688108.2,
+        "fraction": 0.011860694974708812
+      },
+      {
+        "bin_max": 713801.9,
+        "bin_min": 700955.1,
+        "fraction": 0.010471779168846942
+      },
+      {
+        "bin_max": 726648.7,
+        "bin_min": 713801.9,
+        "fraction": 0.015077811585495843
+      },
+      {
+        "bin_max": 739495.6,
+        "bin_min": 726648.7,
+        "fraction": 0.014696667248073282
+      },
+      {
+        "bin_max": 752342.4,
+        "bin_min": 739495.6,
+        "fraction": 0.020226490177458218
+      },
+      {
+        "bin_max": 765189.2,
+        "bin_min": 752342.4,
+        "fraction": 0.035969689335064635
+      },
+      {
+        "bin_max": 778036.0,
+        "bin_min": 765189.2,
+        "fraction": 0.011576451740020801
+      },
+      {
+        "bin_max": 790882.9,
+        "bin_min": 778036.0,
+        "fraction": 0.02626019884106281
+      },
+      {
+        "bin_max": 803729.7,
+        "bin_min": 790882.9,
+        "fraction": 0.026919126339657744
+      },
+      {
+        "bin_max": 816576.5,
+        "bin_min": 803729.7,
+        "fraction": 0.014528705336666732
+      },
+      {
+        "bin_max": 829423.3,
+        "bin_min": 816576.5,
+        "fraction": 0.012984747766429583
+      },
+      {
+        "bin_max": 842270.2,
+        "bin_min": 829423.3,
+        "fraction": 0.013301291368695775
+      },
+      {
+        "bin_max": 855117.0,
+        "bin_min": 842270.2,
+        "fraction": 0.029373954275599655
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "bin_min",
+        "type": "quantitative"
+      },
+      {
+        "field": "bin_max",
+        "type": "quantitative"
+      },
+      {
+        "field": "fraction",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "bin_min",
+      "type": "ordinal"
+    },
+    "x2": {
+      "field": "bin_max"
+    },
+    "y": {
+      "field": "fraction",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 483.3333333333333
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-3-content-block-6-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-4" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-4-content-block-1" class="col-12 p-0" >
+
+    <div id="section-4-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    officeType
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-4-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-4-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-4-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-4-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-4-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-1-2" ><div class="show-scrollbars">4</div></td></tr><tr>
+          <td id="section-4-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-2-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-4-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-4-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-4-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-4-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-4-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-4-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-4-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >B.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >H.O</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-4-content-block-4" class="col-4 mt-1" >
+
+    <div id="section-4-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Value Counts
+                    <span class=top>
+                        expect_column_distinct_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-4-content-block-4-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-76ceb464de252646b9713605cc85cc81"
+  },
+  "datasets": {
+    "data-76ceb464de252646b9713605cc85cc81": [
+      {
+        "count": 125269,
+        "value": "B.O"
+      },
+      {
+        "count": 3942,
+        "value": "B.O directly a/w Head Office"
+      },
+      {
+        "count": 810,
+        "value": "H.O"
+      },
+      {
+        "count": 24776,
+        "value": "S.O"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "value",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "value",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 250
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-4-content-block-4-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-5" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-5-content-block-1" class="col-12 p-0" >
+
+    <div id="section-5-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Deliverystatus
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-5-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-5-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-5-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-5-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-5-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-1-2" ><div class="show-scrollbars">2</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-2-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-5-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-5-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-5-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-5-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Delivery</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Non-Delivery</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-5-content-block-4" class="col-4 mt-1" >
+
+    <div id="section-5-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Value Counts
+                    <span class=top>
+                        expect_column_distinct_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-5-content-block-4-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-97ed143fedbf0d87258ebcc1359e0890"
+  },
+  "datasets": {
+    "data-97ed143fedbf0d87258ebcc1359e0890": [
+      {
+        "count": 145298,
+        "value": "Delivery"
+      },
+      {
+        "count": 9499,
+        "value": "Non-Delivery"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "value",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "value",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 250
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-5-content-block-4-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-6" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-6-content-block-1" class="col-12 p-0" >
+
+    <div id="section-6-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    divisionname
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-6-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-6-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-6-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-6-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-6-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-1-2" ><div class="show-scrollbars">455</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-2-2" ><div class="show-scrollbars">0.3%</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-6-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-6-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-6-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-6-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-7" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-7-content-block-1" class="col-12 p-0" >
+
+    <div id="section-7-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    regionname
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-7-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-7-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-7-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-7-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-7-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-7-content-block-2-cell-1-2" ><div class="show-scrollbars">57</div></td></tr><tr>
+          <td id="section-7-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-7-content-block-2-cell-2-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-7-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-7-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-7-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-7-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-7-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-7-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-7-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-7-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-7-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Hyderabad</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-7-content-block-4" class="col-6 mt-1" >
+
+    <div id="section-7-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Value Counts
+                    <span class=top>
+                        expect_column_distinct_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-7-content-block-4-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-d913c498b4d3691b417fa23194ac01bf"
+  },
+  "datasets": {
+    "data-d913c498b4d3691b417fa23194ac01bf": [
+      {
+        "count": 3043,
+        "value": "Agra"
+      },
+      {
+        "count": 2281,
+        "value": "Ahmedabad HQ"
+      },
+      {
+        "count": 3502,
+        "value": "Ajmer"
+      },
+      {
+        "count": 2613,
+        "value": "Allahabad"
+      },
+      {
+        "count": 2689,
+        "value": "Ambala  HQ"
+      },
+      {
+        "count": 3882,
+        "value": "Aurangabad"
+      },
+      {
+        "count": 602,
+        "value": "Bangalore HQ"
+      },
+      {
+        "count": 3504,
+        "value": "Bareilly"
+      },
+      {
+        "count": 2350,
+        "value": "Berhampur"
+      },
+      {
+        "count": 4201,
+        "value": "Bhopal HQ"
+      },
+      {
+        "count": 3531,
+        "value": "Bhubaneswar HQ"
+      },
+      {
+        "count": 3183,
+        "value": "Calcutta"
+      },
+      {
+        "count": 102,
+        "value": "Calcutta HQ"
+      },
+      {
+        "count": 2084,
+        "value": "Calicut"
+      },
+      {
+        "count": 1200,
+        "value": "Chandigarh HQ"
+      },
+      {
+        "count": 2662,
+        "value": "Chandigarh Region"
+      },
+      {
+        "count": 2244,
+        "value": "Chennai Region"
+      },
+      {
+        "count": 3047,
+        "value": "Coimbatore"
+      },
+      {
+        "count": 2715,
+        "value": "Dehradun"
+      },
+      {
+        "count": 545,
+        "value": "Delhi"
+      },
+      {
+        "count": 1766,
+        "value": "Dibrugarh"
+      },
+      {
+        "count": 2273,
+        "value": "Goa-Panaji"
+      },
+      {
+        "count": 3700,
+        "value": "Gorakhpur"
+      },
+      {
+        "count": 2235,
+        "value": "Guwahati HQ"
+      },
+      {
+        "count": 1236,
+        "value": "Gwalior"
+      },
+      {
+        "count": 4674,
+        "value": "Hyderabad"
+      },
+      {
+        "count": 557,
+        "value": "Hyderabad City"
+      },
+      {
+        "count": 2874,
+        "value": "Indore"
+      },
+      {
+        "count": 2375,
+        "value": "Jaipur HQ"
+      },
+      {
+        "count": 4457,
+        "value": "Jodhpur"
+      },
+      {
+        "count": 1825,
+        "value": "Kanpur"
+      },
+      {
+        "count": 1855,
+        "value": "Kochi"
+      },
+      {
+        "count": 3680,
+        "value": "Kurnool"
+      },
+      {
+        "count": 2992,
+        "value": "Lucknow  HQ"
+      },
+      {
+        "count": 3164,
+        "value": "Madurai"
+      },
+      {
+        "count": 1123,
+        "value": "Mumbai"
+      },
+      {
+        "count": 5150,
+        "value": "Muzaffarpur"
+      },
+      {
+        "count": 2931,
+        "value": "Nagpur"
+      },
+      {
+        "count": 1799,
+        "value": "North Bengal And Sikkim"
+      },
+      {
+        "count": 1442,
+        "value": "North Eastern"
+      },
+      {
+        "count": 4487,
+        "value": "North Karnataka"
+      },
+      {
+        "count": 3913,
+        "value": "Patna HQ"
+      },
+      {
+        "count": 2659,
+        "value": "Pune"
+      },
+      {
+        "count": 3150,
+        "value": "Raipur"
+      },
+      {
+        "count": 3029,
+        "value": "Rajkot"
+      },
+      {
+        "count": 3097,
+        "value": "Ranchi"
+      },
+      {
+        "count": 2285,
+        "value": "Sambalpur"
+      },
+      {
+        "count": 1494,
+        "value": "Shillong HQ"
+      },
+      {
+        "count": 2781,
+        "value": "Shimla HQ"
+      },
+      {
+        "count": 3955,
+        "value": "South Bengal"
+      },
+      {
+        "count": 4594,
+        "value": "South Karnataka"
+      },
+      {
+        "count": 1684,
+        "value": "Srinagar HQ"
+      },
+      {
+        "count": 3505,
+        "value": "Tiruchy"
+      },
+      {
+        "count": 1132,
+        "value": "Trivandrum  HQ"
+      },
+      {
+        "count": 3686,
+        "value": "Vadodara"
+      },
+      {
+        "count": 4477,
+        "value": "Vijayawada"
+      },
+      {
+        "count": 2781,
+        "value": "Visakhapatnam"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "value",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "value",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 475.0
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-7-content-block-4-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-8" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-8-content-block-1" class="col-12 p-0" >
+
+    <div id="section-8-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    circlename
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-8-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-8-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-8-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-8-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-8-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-8-content-block-2-cell-1-2" ><div class="show-scrollbars">22</div></td></tr><tr>
+          <td id="section-8-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-8-content-block-2-cell-2-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-8-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-8-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-8-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-8-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-8-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-8-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-8-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-8-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-8-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Andhra Pradesh</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-8-content-block-4" class="col-4 mt-1" >
+
+    <div id="section-8-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Value Counts
+                    <span class=top>
+                        expect_column_distinct_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-8-content-block-4-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-f9e32bc854abaadb49a7aae1c3520077"
+  },
+  "datasets": {
+    "data-f9e32bc854abaadb49a7aae1c3520077": [
+      {
+        "count": 16169,
+        "value": "Andhra Pradesh"
+      },
+      {
+        "count": 4001,
+        "value": "Assam"
+      },
+      {
+        "count": 9063,
+        "value": "Bihar"
+      },
+      {
+        "count": 3150,
+        "value": "Chattisgarh"
+      },
+      {
+        "count": 545,
+        "value": "Delhi"
+      },
+      {
+        "count": 8996,
+        "value": "Gujarat"
+      },
+      {
+        "count": 2689,
+        "value": "Haryana"
+      },
+      {
+        "count": 2781,
+        "value": "Himachal Pradesh"
+      },
+      {
+        "count": 1684,
+        "value": "Jammukashmir"
+      },
+      {
+        "count": 3097,
+        "value": "Jharkhand"
+      },
+      {
+        "count": 9683,
+        "value": "Karnataka"
+      },
+      {
+        "count": 5071,
+        "value": "Kerala"
+      },
+      {
+        "count": 8311,
+        "value": "Madhya Pradesh"
+      },
+      {
+        "count": 12868,
+        "value": "Maharashtra"
+      },
+      {
+        "count": 2936,
+        "value": "North Eastern"
+      },
+      {
+        "count": 8166,
+        "value": "Odisha"
+      },
+      {
+        "count": 3862,
+        "value": "Punjab"
+      },
+      {
+        "count": 10334,
+        "value": "Rajasthan"
+      },
+      {
+        "count": 11960,
+        "value": "Tamilnadu"
+      },
+      {
+        "count": 17677,
+        "value": "Uttar Pradesh"
+      },
+      {
+        "count": 2715,
+        "value": "Uttarakhand"
+      },
+      {
+        "count": 9039,
+        "value": "West Bengal"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "value",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "value",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 250
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-8-content-block-4-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-9" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-9-content-block-1" class="col-12 p-0" >
+
+    <div id="section-9-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Taluk
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-9-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-9-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-9-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-9-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-9-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-9-content-block-2-cell-1-2" ><div class="show-scrollbars">9811</div></td></tr><tr>
+          <td id="section-9-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-9-content-block-2-cell-2-2" ><div class="show-scrollbars">6.3%</div></td></tr><tr>
+          <td id="section-9-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-9-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-9-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-9-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-9-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-9-content-block-2-cell-5-2" ><div class="show-scrollbars">871</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-9-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-9-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-9-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Chennur</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Asifabad</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Luxettipet</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Nirmal</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Bellampalle</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Boath</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Kagaznagar</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Khanapur</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Sirpur (t)</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-10" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-10-content-block-1" class="col-12 p-0" >
+
+    <div id="section-10-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Districtname
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-10-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-10-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-10-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-10-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-10-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-10-content-block-2-cell-1-2" ><div class="show-scrollbars">632</div></td></tr><tr>
+          <td id="section-10-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-10-content-block-2-cell-2-2" ><div class="show-scrollbars">0.4%</div></td></tr><tr>
+          <td id="section-10-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-10-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-10-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-10-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-10-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-10-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-10-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-10-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-10-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-11" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-11-content-block-1" class="col-12 p-0" >
+
+    <div id="section-11-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    statename
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-11-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-11-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-11-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-11-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-11-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-11-content-block-2-cell-1-2" ><div class="show-scrollbars">37</div></td></tr><tr>
+          <td id="section-11-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-11-content-block-2-cell-2-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-11-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-11-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-11-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-11-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-11-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-11-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-11-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-11-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-11-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >TELANGANA</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+
+<div id="section-11-content-block-4" class="col-5 mt-1" >
+
+    <div id="section-11-content-block-4-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Value Counts
+                    <span class=top>
+                        expect_column_distinct_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+<div class="show-scrollbars">
+  <div id="section-11-content-block-4-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-17c143384771e419f91a650a3e476b7d"
+  },
+  "datasets": {
+    "data-17c143384771e419f91a650a3e476b7d": [
+      {
+        "count": 102,
+        "value": "ANDAMAN & NICOBAR ISLANDS"
+      },
+      {
+        "count": 10334,
+        "value": "ANDHRA PRADESH"
+      },
+      {
+        "count": 295,
+        "value": "ARUNACHAL PRADESH"
+      },
+      {
+        "count": 4010,
+        "value": "ASSAM"
+      },
+      {
+        "count": 9063,
+        "value": "BIHAR"
+      },
+      {
+        "count": 52,
+        "value": "CHANDIGARH"
+      },
+      {
+        "count": 3150,
+        "value": "CHATTISGARH"
+      },
+      {
+        "count": 39,
+        "value": "DADRA & NAGAR HAVELI"
+      },
+      {
+        "count": 20,
+        "value": "DAMAN & DIU"
+      },
+      {
+        "count": 545,
+        "value": "DELHI"
+      },
+      {
+        "count": 258,
+        "value": "GOA"
+      },
+      {
+        "count": 8937,
+        "value": "GUJARAT"
+      },
+      {
+        "count": 2689,
+        "value": "HARYANA"
+      },
+      {
+        "count": 2781,
+        "value": "HIMACHAL PRADESH"
+      },
+      {
+        "count": 1684,
+        "value": "JAMMU & KASHMIR"
+      },
+      {
+        "count": 3097,
+        "value": "JHARKHAND"
+      },
+      {
+        "count": 9682,
+        "value": "KARNATAKA"
+      },
+      {
+        "count": 5058,
+        "value": "KERALA"
+      },
+      {
+        "count": 10,
+        "value": "LAKSHADWEEP"
+      },
+      {
+        "count": 8311,
+        "value": "MADHYA PRADESH"
+      },
+      {
+        "count": 12610,
+        "value": "MAHARASHTRA"
+      },
+      {
+        "count": 699,
+        "value": "MANIPUR"
+      },
+      {
+        "count": 475,
+        "value": "MEGHALAYA"
+      },
+      {
+        "count": 412,
+        "value": "MIZORAM"
+      },
+      {
+        "count": 331,
+        "value": "NAGALAND"
+      },
+      {
+        "count": 36,
+        "value": "NULL"
+      },
+      {
+        "count": 8166,
+        "value": "ODISHA"
+      },
+      {
+        "count": 93,
+        "value": "PONDICHERRY"
+      },
+      {
+        "count": 3809,
+        "value": "PUNJAB"
+      },
+      {
+        "count": 10334,
+        "value": "RAJASTHAN"
+      },
+      {
+        "count": 211,
+        "value": "SIKKIM"
+      },
+      {
+        "count": 11870,
+        "value": "TAMIL NADU"
+      },
+      {
+        "count": 5808,
+        "value": "TELANGANA"
+      },
+      {
+        "count": 708,
+        "value": "TRIPURA"
+      },
+      {
+        "count": 17674,
+        "value": "UTTAR PRADESH"
+      },
+      {
+        "count": 2718,
+        "value": "UTTARAKHAND"
+      },
+      {
+        "count": 8726,
+        "value": "WEST BENGAL"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "value",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "value",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 308.33333333333337
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-11-content-block-4-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-12" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-12-content-block-1" class="col-12 p-0" >
+
+    <div id="section-12-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Telephone
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-12-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-12-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-12-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-12-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-12-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-12-content-block-2-cell-1-2" ><div class="show-scrollbars">21201</div></td></tr><tr>
+          <td id="section-12-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-12-content-block-2-cell-2-2" ><div class="show-scrollbars">13.7%</div></td></tr><tr>
+          <td id="section-12-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-12-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-12-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-12-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-12-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-12-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-12-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-12-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-12-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >NA</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >08732-226703</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >08732-226738</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >08735-222138</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-13" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-13-content-block-1" class="col-12 p-0" >
+
+    <div id="section-13-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Related Suboffice
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-13-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-13-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-13-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-13-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-13-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-13-content-block-2-cell-1-2" ><div class="show-scrollbars">15994</div></td></tr><tr>
+          <td id="section-13-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-13-content-block-2-cell-2-2" ><div class="show-scrollbars">10.3%</div></td></tr><tr>
+          <td id="section-13-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-13-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-13-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-13-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-13-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-13-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-13-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-13-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-13-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Chinnoor S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >NA</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Rechini S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Asifabad S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Bellampalli S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Bheemaram S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Chincholi (B) S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Dasnapur Colony  D.S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Echoda S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Gumma S.O (Adilabad)</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Kalyani Khani S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Kuntala S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Peddur S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Sirpur (T) S.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Sirpur Khagaznagar S.O</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-14" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-14-content-block-1" class="col-12 p-0" >
+
+    <div id="section-14-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    Related Headoffice
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-14-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-14-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-14-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-14-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-14-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-14-content-block-2-cell-1-2" ><div class="show-scrollbars">808</div></td></tr><tr>
+          <td id="section-14-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-14-content-block-2-cell-2-2" ><div class="show-scrollbars">0.5%</div></td></tr><tr>
+          <td id="section-14-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-14-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-14-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-14-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-14-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-14-content-block-2-cell-5-2" ><div class="show-scrollbars">2683</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-14-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-14-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-14-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Mancherial H.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >Adilabad H.O</span>
+                </span>
+            
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >NA</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-15" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-15-content-block-1" class="col-12 p-0" >
+
+    <div id="section-15-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    longitude
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-15-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-15-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-15-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-15-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-15-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-15-content-block-2-cell-1-2" ><div class="show-scrollbars">142</div></td></tr><tr>
+          <td id="section-15-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-15-content-block-2-cell-2-2" ><div class="show-scrollbars">0.1%</div></td></tr><tr>
+          <td id="section-15-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-15-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-15-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-15-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-15-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-15-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-15-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-15-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-15-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >NA</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-16" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-16-content-block-1" class="col-12 p-0" >
+
+    <div id="section-16-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0 p-0 cooltip" >
+                    latitude
+                    <span class=top>
+                        expect_column_to_exist
+                    </span>
+                </h5>
+            
+        </div>
+      
+    
+        <div id="section-16-content-block-1-subheader" >
+          
+                <h6 class="mt-1 mb-0 cooltip" >
+                    Type: string
+                    <span class=top>
+                        expect_column_values_to_be_of_type <br>expect_column_values_to_be_in_type_list
+                    </span>
+                </h6>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-16-content-block-2" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-16-content-block-2-header" >
+        
+          
+            <div>
+              
+                <h6 >
+                    Properties
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-16-content-block-2-body"
+  class="table table-sm table-unbordered" style="width:100%;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-16-content-block-2-cell-1-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (n)
+                    <span class=top>
+                        expect_column_unique_value_count_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-16-content-block-2-cell-1-2" ><div class="show-scrollbars">141</div></td></tr><tr>
+          <td id="section-16-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Distinct (%)
+                    <span class=top>
+                        expect_column_proportion_of_unique_values_to_be_between
+                    </span>
+                </span>
+            </div></td><td id="section-16-content-block-2-cell-2-2" ><div class="show-scrollbars">0.1%</div></td></tr><tr>
+          <td id="section-16-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (n)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-16-content-block-2-cell-3-2" ><div class="show-scrollbars">0</div></td></tr><tr>
+          <td id="section-16-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span class="cooltip" >
+                    Missing (%)
+                    <span class=top>
+                        expect_column_values_to_not_be_null
+                    </span>
+                </span>
+            </div></td><td id="section-16-content-block-2-cell-4-2" ><div class="show-scrollbars">0.0%</div></td></tr><tr>
+          <td id="section-16-content-block-2-cell-5-1" ><div class="show-scrollbars">Leading or trailing whitespace (n)</div></td><td id="section-16-content-block-2-cell-5-2" ><div class="show-scrollbars">0</div></td></tr></tbody>
+</table>
+
+</div>
+        
+
+<div id="section-16-content-block-3" class="col-3 mt-1 pl-1 pr-1" >
+
+    <div id="section-16-content-block-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="cooltip" >
+                    Example Values
+                    <span class=top>
+                        expect_column_values_to_be_in_set
+                    </span>
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+<p id="section-16-content-block-3-body" >
+    
+                <span >
+                    <span class="badge badge-info" style="word-break:break-all;" >NA</span>
+                </span>
+            
+    </p>
+
+</div>
+        
+    </div>
+</div>
+        
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
