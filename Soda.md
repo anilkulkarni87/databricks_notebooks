@@ -17,8 +17,8 @@ The documentation is quite clean and easy to read and can be found [here](https:
 
 ### Notebooks reference
 1. Setup Cluster by installing required libraries [Setup cluster](./soda/SODA_CLUSTER_SETUP.html)
-2. Define the BaseDataContext for GE [Define variables](./soda/SODA_PROPERTIES.html)
-3. Define expectations and run tests [Data Quality](./soda/SODA_POC.html)
+2. Define the required variables for SODA [Define variables](./soda/SODA_PROPERTIES.html)
+3. Define scan definition and execute tests [Data Quality](./soda/SODA_POC.html)
   
 ## Scan Results
 Scan Results is a python Object and comprises of two child Objects:
